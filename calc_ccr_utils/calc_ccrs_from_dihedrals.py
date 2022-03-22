@@ -5,11 +5,12 @@ from br_scripts.calc_ccr_utils.dihedrals_to_cos_theta import dihedrals_to_cos_th
 from tqdm import tqdm
 import numpy as np
 import pandas as pd
+from pathlib import Path
 
 
 class BaseCcrs:
     from pyxmolpp2 import PdbFile
-    path_to_tripeptide_pdb = "ALA_tripeptide.pdb"
+    path_to_tripeptide_pdb = (Path(__file__).parent / "../data/ALA_tripeptide.pdb").resolve().as_posix()
     tripeptide = PdbFile(path_to_tripeptide_pdb).frames()[0]
 
     rCAHA = 1.09e-10
