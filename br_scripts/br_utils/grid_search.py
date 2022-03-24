@@ -36,6 +36,6 @@ class ErrorFunctionCcr:
         delta = []
         for ind, ccr_value in enumerate(self.ccrs_experimental_values):
             weighted_ss_ccr = np.array(weights) * self.ccrs_train_values[:, ind]
-            current_delta = np.square(ccr_value - sum(weighted_ss_ccr))
+            current_delta = np.abs(ccr_value - sum(weighted_ss_ccr))
             delta.append(current_delta)
         return np.array(delta).sum()

@@ -10,7 +10,7 @@ from pathlib import Path
 
 class BaseCcrs:
     from pyxmolpp2 import PdbFile
-    path_to_tripeptide_pdb = (Path(__file__).parent / "../data/ALA_tripeptide.pdb").resolve().as_posix()
+    path_to_tripeptide_pdb = (Path(__file__).parent / "../../data/ALA_tripeptide.pdb").resolve().as_posix()
     tripeptide = PdbFile(path_to_tripeptide_pdb).frames()[0]
 
     rCAHA = 1.09e-10
